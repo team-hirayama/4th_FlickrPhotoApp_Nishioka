@@ -2,32 +2,33 @@
 
 第4回 実践編スキルアップテスト　
 
-1. 問題内容
+# 1. 問題内容
 [第二回スキルアップ　実践編　問題](https://github.com/stv-ekushida/iOSTraining/wiki/%E7%AC%AC%E4%BA%8C%E5%9B%9E%E3%82%B9%E3%82%AD%E3%83%AB%E3%82%A2%E3%83%83%E3%83%97%E3%80%80%E5%AE%9F%E8%B7%B5%E7%B7%A8%E3%80%80%E5%95%8F%E9%A1%8C)
 
-2. 進捗状況
+# 2. 進捗状況
 
 >
->FlickrPhotoApp.project
->|- FlickrPhotoApp
->|        |- Infra    
->|        |    |- API リクエスト、レスポンス処理
->|        |    |
->|        |    |- Refs XMLデータマッピング
->|        |
->|        |- Domain　　　　　　
->|        |    |- ValueObjects 　モデル    
->|        |    |
->|        |    |- Usecases  通信状態の確認処理
->|        |
->|        |- Presentation    
->|             |- Presenters ライフサイクル、ルーティング処理
->|             |
->|             |- Views コレクショビュー表示、検索バー表示、検索入力、画像の表示
->|- Others
->
+>FlickrPhotoApp.project  
+>|- FlickrPhotoApp  
+>|        |- Infra    
+>|        |    |- API リクエスト、レスポンス処理  
+>|        |    |  
+>|        |    |- Refs XMLデータマッピング  
+>|        |  
+>|        |- Domain  　　　　　　
+>|        |    |- ValueObjects 　モデル  
+>|        |    |  
+>|        |    |- Usecases  通信状態の確認処理  
+>|        |  
+>|        |- Presentation      
+>|             |- Presenters ライフサイクル、ルーティング処理  
+>|             |  
+>|             |- Views コレクショビュー表示、検索バー表示、検索入力、画像の表示  
+>|- Others  
+>  
 
-3. 仕様要求
+# 3. 仕様要求
+
 * Flickr APIを利用して写真が検索できていること
 * APIで取得した情報をもとに、写真をサーバーから取得できていること
 * 1リクエスト当たりの取得件数を50件とすること(1リクエスト当たりの制限事項）
