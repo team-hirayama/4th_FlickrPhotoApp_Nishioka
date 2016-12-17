@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol FlickrViewDelegate {
+protocol FlickrViewDelegate: UISearchBarDelegate {
     func searchBarSearchButtonClicked(searchBar: UISearchBar)
 }
 

@@ -25,7 +25,7 @@ class FlickrViewController: UIViewController {
     
     var dataSource: UICollectionViewDataSource?
     var delegate: UICollectionViewDelegate?
-    var searches = [Photo]()
+    var searches = NSArray() as! [Photo]
     
     
     override func viewDidLoad() {
@@ -95,7 +95,6 @@ extension FlickrViewController: UICollectionViewDelegate {
 }
 
 
-
 extension FlickrViewController: FlickrViewDelegate {
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
@@ -123,25 +122,30 @@ extension FlickrViewController: FlickrViewDelegate {
             guard let pages = flickr.result as [Page]? else {
                 return
             }
-            
+
             for page in pages {
                 print(" page : \(page)")
                 let photos = page.photos
+                
+                var items = [Photo]()
                 for photo in photos {
-                    print("photo : \(photo)")
+                    let item = photo as Photo?
+                    print(item?.title)
+                    items.append(item!)
                 }
+                searches = items as [Photo]
+                
             }
             
             // リロード処理
             flickrView!.flickrCollectionView?.reloadData()
-            
             
         } else {
             // アラート表示
             print("Fail to download")
             activityIndicator.removeFromSuperview()
         }
-        
+        return
         
     }
     

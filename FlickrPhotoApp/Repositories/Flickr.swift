@@ -37,8 +37,9 @@ class Flickr {
                 dir.apiKey: "10ba93bbe49a6480d765ce486673954a",
                 dir.text: input,
                 dir.perPage: "50",
-                dir.perPage:  "2"
-            ]).response { (request, data, response, error) in
+                dir.numberOfPage: "2"
+            ]
+            ).response { (request, data, response, error) in
                 
                 if let error = error {
                     print(error)
