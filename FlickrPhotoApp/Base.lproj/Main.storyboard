@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Flickr View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FlickrPhotoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FlickrViewController" customModule="FlickrPhotoApp" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -68,10 +68,13 @@
                             <constraint firstItem="tuw-hP-p0y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="duR-zr-sbM"/>
                         </constraints>
                         <connections>
+                            <outlet property="flickrCollectionView" destination="gBe-Wc-Ho1" id="Ma0-rH-iGN"/>
                             <outlet property="flickrSearchBar" destination="tuw-hP-p0y" id="A6X-wJ-0yC"/>
-                            <outlet property="photoCollectionView" destination="gBe-Wc-Ho1" id="Imq-2O-Zt6"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="flickrView" destination="8bC-Xf-vdC" id="X85-T9-Mz4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

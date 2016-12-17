@@ -8,16 +8,20 @@
 
 import UIKit
 
+protocol FlickrViewDelegate {
+    func searchBarSearchButtonClicked(searchBar: UISearchBar)
+}
+
 class FlickrView: UIView {
     
     let seaechIcon: UISearchBarIcon = .Clear
     let keyword: String = "キーワード検索"
     let input: String = ""
 
-    
     @IBOutlet weak var flickrSearchBar: UISearchBar?
-    
-    @IBOutlet var photoCollectionView: FlickrCollectionView?
+    @IBOutlet weak var flickrCollectionView: FlickrCollectionView?
+
+    var delegate: FlickrViewDelegate?
     
 }
 

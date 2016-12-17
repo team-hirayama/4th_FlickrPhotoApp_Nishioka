@@ -23,6 +23,8 @@
 		E19B2C6B1E05025F00E1F3E5 /* FlickrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19B2C6A1E05025F00E1F3E5 /* FlickrView.swift */; };
 		E19B2C6D1E05035000E1F3E5 /* FlickrCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19B2C6C1E05035000E1F3E5 /* FlickrCell.swift */; };
 		E19B2C6F1E0503D800E1F3E5 /* FlickrCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19B2C6E1E0503D800E1F3E5 /* FlickrCollectionView.swift */; };
+		E19B2C711E050AD300E1F3E5 /* Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19B2C701E050AD300E1F3E5 /* Flickr.swift */; };
+		E19B2C731E050BB400E1F3E5 /* XMLParseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19B2C721E050BB400E1F3E5 /* XMLParseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		E19B2C6A1E05025F00E1F3E5 /* FlickrView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlickrView.swift; path = Views/FlickrView.swift; sourceTree = "<group>"; };
 		E19B2C6C1E05035000E1F3E5 /* FlickrCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlickrCell.swift; path = Views/FlickrCell.swift; sourceTree = "<group>"; };
 		E19B2C6E1E0503D800E1F3E5 /* FlickrCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlickrCollectionView.swift; path = Views/FlickrCollectionView.swift; sourceTree = "<group>"; };
+		E19B2C701E050AD300E1F3E5 /* Flickr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Flickr.swift; path = Repositories/Flickr.swift; sourceTree = "<group>"; };
+		E19B2C721E050BB400E1F3E5 /* XMLParseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XMLParseManager.swift; path = Repositories/XMLParseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +202,7 @@
 		E19B2C5C1E04F20400E1F3E5 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				E19B2C701E050AD300E1F3E5 /* Flickr.swift */,
 			);
 			name = Api;
 			sourceTree = "<group>";
@@ -223,7 +228,6 @@
 			children = (
 				E19B2C2F1E04F18800E1F3E5 /* Main.storyboard */,
 				E19B2C341E04F18800E1F3E5 /* LaunchScreen.storyboard */,
-				E19B2C2D1E04F18800E1F3E5 /* FlickrPhotoViewController.swift */,
 				E19B2C6A1E05025F00E1F3E5 /* FlickrView.swift */,
 				E19B2C6C1E05035000E1F3E5 /* FlickrCell.swift */,
 				E19B2C6E1E0503D800E1F3E5 /* FlickrCollectionView.swift */,
@@ -234,6 +238,7 @@
 		E19B2C601E04F26E00E1F3E5 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				E19B2C2D1E04F18800E1F3E5 /* FlickrPhotoViewController.swift */,
 			);
 			name = Presenters;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 		E19B2C631E04F2F600E1F3E5 /* Prefs */ = {
 			isa = PBXGroup;
 			children = (
+				E19B2C721E050BB400E1F3E5 /* XMLParseManager.swift */,
 			);
 			name = Prefs;
 			sourceTree = "<group>";
@@ -535,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E19B2C731E050BB400E1F3E5 /* XMLParseManager.swift in Sources */,
 				E19B2C6D1E05035000E1F3E5 /* FlickrCell.swift in Sources */,
 				E19B2C691E04FFD800E1F3E5 /* FlickrModel.swift in Sources */,
 				E19B2C6F1E0503D800E1F3E5 /* FlickrCollectionView.swift in Sources */,
@@ -542,6 +549,7 @@
 				E19B2C671E04FEFA00E1F3E5 /* CheckReachability.swift in Sources */,
 				E19B2C6B1E05025F00E1F3E5 /* FlickrView.swift in Sources */,
 				E19B2C2C1E04F18800E1F3E5 /* AppDelegate.swift in Sources */,
+				E19B2C711E050AD300E1F3E5 /* Flickr.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
