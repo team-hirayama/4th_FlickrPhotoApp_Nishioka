@@ -10,6 +10,9 @@ import Foundation
 
 class FlickrModel: AnyObject {
     // 共通項
+    internal var pages = [Page]()
+    internal var photo = [Photo]()
+    
 }
 
 
