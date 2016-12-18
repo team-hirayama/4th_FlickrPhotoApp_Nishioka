@@ -19,16 +19,15 @@ struct FlickrArguments {
     let numberOfPage = "page"
 }
 
-
 class Flickr {
-    
+
     let dir = FlickrArguments()
     // API結果保持用
     var result = [Page]()
-    
+
     // APIリクエスト
     func searchFlickrForTerm(input: String) -> Bool {
-        
+
         Alamofire.request(
             .GET,
             dir.endpoint,
@@ -40,20 +39,20 @@ class Flickr {
                 dir.numberOfPage: "2"
             ]
             ).response { (request, data, response, error) in
-                
+
                 if let error = error {
                     print(error)
                     return
                 }
-                
+
                 if let response = response {
-                    self.result = XMLParseManager.parseXML(response)!
+                    self.result = XMLParseManager.parseXML(response)
                 }
-                
+
         }
         return true
     }
-    
+
     func searchFlickrWithJSON(input: String) {
         Alamofire.request(.GET,
             dir.endpoint,
@@ -65,45 +64,47 @@ class Flickr {
                 "page": "2",
                 "format": "json"
             ]).responseJSON { responseData in
-                
+
                 guard let data = responseData.result.value else {
                     return
                 }
-                
+
                 let jasonDATA = JSON(data)
                 self.getData(jasonDATA)
-                
+
         }
     }
-    
+
     private func getData(swifyJSON: JSON) {
         guard let object = swifyJSON.array else {
             return
         }
-        
-        
+
         print(object)
-        
+
     }
 
 }
 
 extension Flickr {
-    
+
     // APIデータをPhotoで渡すとURLが返す
     class func photoSource(photo: Photo) -> String? {
-        return photoSourceURL(photo.farm, id: photo.id, server: photo.server, secret: photo.secret)
+        return photoSourceURL(photo.farm,
+                              photoID: photo.photoID,
+                              server: photo.server,
+                              secret: photo.secret)
     }
-    
     // (例) https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}_[mstzb].jpg
-    private class func photoSourceURL( farm: Int, id: Int, server: Int, secret: String) -> String {
+    private class func photoSourceURL( farm: Int,
+                                       photoID: Int,
+                                       server: Int,
+                                       secret: String) -> String {
         let url = "https://farm\(String(farm))"
             + ".staticflickr.com/\(String(server))"
-            + "/\(String(id))"
+            + "/\(String(photoID))"
             + "_\(String(secret))_s.jpg"
-        
+
         return url
     }
-    
 }
-

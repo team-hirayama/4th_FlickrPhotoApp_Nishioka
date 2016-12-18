@@ -8,30 +8,30 @@
 
 import SWXMLHash
 
-class XMLParseManager {
-    
-    class func parseXML(data: AnyObject) -> [Page]? {
+class XMLParseManager: XMLElement {
+
+    static func parseXML(data: AnyObject) -> [Page] {
         guard let xmlData = data as? NSData else {
-            return nil
+            return [Page]()
         }
-        
+
         let xml = SWXMLHash.config { config in
-            config.shouldProcessLazily = false
-            }.parse(xmlData);
-        
+                    config.shouldProcessLazily = false
+                }.parse(xmlData)
+
         var pages = [Page]()
-        
+
         for page in xml["rsp"]["photos"] {
             let newPage = Page()
-            var photos = [Photo]()
-            
+
             if let val = page.element?.attributes["perpage"] {
                 newPage.perpage = Int(val)!
             }
             if let val = page.element?.attributes["page"] {
                 newPage.page = Int(val)!
             }
-            
+
+            var photos = [Photo]()
             for photo in page["photo"] {
                 let tempPhoto = Photo()
                 if let ower = photo.element?.attributes["ower"] {
@@ -47,7 +47,7 @@ class XMLParseManager {
                     tempPhoto.isfamily = Int(isfamily)!
                 }
                 if let id = photo.element?.attributes["id"] {
-                    tempPhoto.id = Int(id)!
+                    tempPhoto.photoID = Int(id)!
                 }
                 if let server = photo.element?.attributes["server"] {
                     tempPhoto.server = Int(server)!
@@ -61,16 +61,13 @@ class XMLParseManager {
                 if let isfriend = photo.element?.attributes["isfriend"] {
                     tempPhoto.isfriend = Int(isfriend)!
                 }
-                photos.append(tempPhoto);
+                photos.append(tempPhoto)
                 print(tempPhoto)
             }
-            newPage.photos = photos;
-            pages.append(newPage);
+            newPage.photos = photos
+            pages.append(newPage)
         }
         return pages
     }
-    
-    
+
 }
-
-

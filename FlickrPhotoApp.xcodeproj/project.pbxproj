@@ -291,6 +291,7 @@
 				E19B2C261E04F18800E1F3E5 /* Resources */,
 				3DAAC6CF19FFDB2D12C1E512 /* [CP] Embed Pods Frameworks */,
 				249FFFFB3E89BA0FA0D6F0A4 /* [CP] Copy Pods Resources */,
+				E19B2C741E0542AE00E1F3E5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -518,6 +519,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlickrPhotoAppTests/Pods-FlickrPhotoAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		E19B2C741E0542AE00E1F3E5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		EE6D8E80B120D54C8D86D6E1 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

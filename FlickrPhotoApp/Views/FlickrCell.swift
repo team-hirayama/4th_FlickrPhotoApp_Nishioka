@@ -9,14 +9,12 @@
 import UIKit
 
 class FlickrCell: UICollectionViewCell {
-    
+
     @IBOutlet weak var photoImage: UIImageView?
 
 }
 
-
 // MARK: - UICollectionViewDelegate
 
 extension FlickrCell: UICollectionViewDelegate {
-    
 }

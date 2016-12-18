@@ -13,7 +13,6 @@ protocol FlickrViewDelegate: UISearchBarDelegate {
 }
 
 class FlickrView: UIView {
-    
     let seaechIcon: UISearchBarIcon = .Clear
     let keyword: String = "キーワード検索"
     let input: String = ""
@@ -22,12 +21,9 @@ class FlickrView: UIView {
     @IBOutlet weak var flickrCollectionView: FlickrCollectionView?
 
     var delegate: FlickrViewDelegate?
-    
 }
 
 extension FlickrView: UISearchBarDelegate {
-    
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
     }
-    
 }
